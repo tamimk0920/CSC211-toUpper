@@ -12,7 +12,7 @@ module toUpper (in,out);
     not #(5) N6(a6n, in[6]);
     not #(5) N7(a7n, in[7]);   
 
-    wire s0, s1, s2, s3, s4
+    wire s0, s1, s2, s3, s4;
 
     and #(10) S0(s0, a7n,a1n,in[5]); // Yellow
     and #(10) S1(s1, a7n,in[5],a4n,a3n,a2n,a1n,a0n); // Red
@@ -22,13 +22,13 @@ module toUpper (in,out);
 
     
     or #(10) O1(out[5], s0, s1, s2, s3, s4); 
-    
-    buf #(4) B0(out[0], in[0])
-    buf #(4) B1(out[1], in[1])
-    buf #(4) B2(out[2], in[2])
-    buf #(4) B3(out[3], in[3])
-    buf #(4) B4(out[4], in[4])
-    buf #(4) B6(out[6], in[6])
-    buf #(4) B7(out[7], in[7])
+
+    buf #(4) B0(out[0], in[0]);
+    buf #(4) B1(out[1], in[1]);
+    buf #(4) B2(out[2], in[2]);
+    buf #(4) B3(out[3], in[3]);
+    buf #(4) B4(out[4], in[4]);
+    buf #(4) B6(out[6], in[6]);
+    buf #(4) B7(out[7], in[7]);
     
 endmodule
