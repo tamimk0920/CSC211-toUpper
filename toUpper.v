@@ -16,14 +16,15 @@ module toUpper (in,out);
 
     wire s0, s1, s2, s3, s4;
 
-    and #(10) S0(s0, a7n,a1n,in[5]); // Yellow
-    and #(10) S1(s1, a7n,in[5],a4n,a3n,a2n,a1n,a0n); // Red
-    and #(10) S2(s2, a7n,in[6],in[5],in[4],in[3],in[2]); // Blue
-    and #(10) S3(s3, a7n,in[6],in[5],in[4],in[3],a2n,in[1],in[0]); // Green
-    and #(10) S4(s4, in[7],in[5]); // Purple
-
+    and #(10) S0(s0, a6n,in[5]);
+    and #(10) S1(s1 ,in[5],a4n,a3n,a2n,a1n,a0n);
+    and #(10) S2(s2, in[5],in[4],in[3],in[2],in[1],in[0]);
+    and #(10) S3(s3, in[5],in[4],in[3],in[2]);
+    and #(10) S4(s4, in[7],in[5]);
     
+
     or #(10) O1(out[5], s0, s1, s2, s3, s4); 
+
 
     buf #(4) B0(out[0], in[0]);
     buf #(4) B1(out[1], in[1]);
